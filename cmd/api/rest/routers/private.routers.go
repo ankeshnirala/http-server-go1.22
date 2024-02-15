@@ -12,6 +12,6 @@ func (s *Storage) RegisterPrivateRouter() {
 	privateRouter.Use(middlewares.LoggerMiddleware, middlewares.AuthMiddleware)
 
 	// Register handlers with the router
-	privateRouter.Handle("GET /hello", handlers.HelloWorldHandler1)
+	privateRouter.Handle("POST /hello", handlers.HelloWorldHandler1)
 
 }
