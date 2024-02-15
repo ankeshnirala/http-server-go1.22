@@ -1,11 +1,11 @@
-package applications
+package services
 
 import (
-	"github.com/ankeshnirala/http-server-go1.22/internals/models"
-	"github.com/ankeshnirala/http-server-go1.22/internals/validator"
+	"github.com/ankeshnirala/http-server-go1.22/internals/applications/models"
+	"github.com/ankeshnirala/http-server-go1.22/internals/applications/utils"
 )
 
-func (s *Storage) HelloWorldHandler1(request HelloWorldHandler1Request) (*models.Data, error) {
+func (s *Storage) HelloWorldHandler1(request *models.HelloWorldHandler1Request) (*models.Data, error) {
 	// validate request
 	// var requestData HelloWorldHandler1Request
 	// err := json.NewDecoder(request).Decode(&requestData)
@@ -14,7 +14,7 @@ func (s *Storage) HelloWorldHandler1(request HelloWorldHandler1Request) (*models
 	// }
 
 	// Create a new instance of Validator
-	v := validator.NewValidator()
+	v := utils.NewValidator()
 	// Validate request data
 	err := v.ValidateString(request.Email, "Email", "required", "email")
 	if err != nil {
