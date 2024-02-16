@@ -1,0 +1,18 @@
+@baseURL=http://localhost:4000
+
+@apiKey = ssf
+
+### HELLO GET
+GET {{baseURL}}/api/hello
+Accept: application/json
+Content-Type: application/json
+
+### HELLO POST
+POST {{baseURL}}/auth/hello
+Accept: application/json
+Content-Type: application/json
+x-jwt-token: {{apiKey}}
+
+{
+    "email": "ankeshnirala@gmail.com"
+}
