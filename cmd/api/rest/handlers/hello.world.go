@@ -24,9 +24,9 @@ func HelloWorldHandler1(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	response := &httpsetup.StandardResponse{
-		Code: http.StatusOK,
-		Data: result,
+	response := &httpsetup.DataResponse{
+		TotalItems: 10,
+		Items:      []interface{}{result},
 	}
 
 	httpsetup.WriteJSON(w, http.StatusOK, response)
@@ -36,9 +36,9 @@ func HelloWorldHandler2(w http.ResponseWriter, r *http.Request) {
 
 	result := services.New().HelloWorldHandler2([]int{})
 
-	response := &httpsetup.StandardResponse{
-		Code: http.StatusOK,
-		Data: result,
+	response := &httpsetup.DataResponse{
+		TotalItems: 10,
+		Items:      []interface{}{result},
 	}
 
 	httpsetup.WriteJSON(w, http.StatusOK, response)

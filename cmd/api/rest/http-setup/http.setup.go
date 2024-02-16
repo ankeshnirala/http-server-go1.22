@@ -56,6 +56,11 @@ type ApiError struct {
 	Error string `json:"error"`
 }
 
+type DataResponse struct {
+	TotalItems int           `json:"totalItems"`
+	Items      []interface{} `json:"items"`
+}
+
 type StandardResponse struct {
 	Code int         `json:"code"`
 	Data interface{} `json:"data"`
