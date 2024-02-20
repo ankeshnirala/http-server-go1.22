@@ -6,12 +6,12 @@ import (
 )
 
 func (s *Storage) RegisterPublicRouter() {
-	privateRouter := s.routers.Group("/api")
+	publicRouter := s.routers.Group("/api")
 
 	// add middleware to the router
-	privateRouter.Use(middlewares.LoggerMiddleware)
+	publicRouter.Use(middlewares.LoggerMiddleware)
 
 	// Register handlers with the router
-	privateRouter.Handle("GET /hello", handlers.HelloWorldHandler2)
+	publicRouter.Handle("GET /hello", handlers.HelloWorldHandler2)
 
 }
